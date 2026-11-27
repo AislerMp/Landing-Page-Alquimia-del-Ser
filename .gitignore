@@ -1,0 +1,25 @@
+# Configuración local y credenciales de entorno
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Dependencias y cachés de desarrollo
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Archivos del editor y del sistema operativo
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+
+# Material visual de trabajo
+/Referencias/

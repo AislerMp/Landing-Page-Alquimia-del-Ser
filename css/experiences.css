@@ -1,0 +1,134 @@
+.experiences {
+  position: relative;
+  background: #f8f4ea;
+}
+.experiences-anchor { position: absolute; top: 0; }
+.experiences-inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 5rem 1.25rem;
+}
+.experiences-heading {
+  display: grid;
+  gap: 2rem;
+}
+.experiences-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: #8f6826;
+  font-size: .625rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+.experiences-eyebrow span { width: 2rem; height: 1px; background: #b88a3c99; }
+.experiences-heading .section-title { max-width: 20ch; margin-top: 1.25rem; text-wrap: wrap; }
+.experiences-guide { max-width: 22.5rem; color: var(--muted); font-size: .84375rem; line-height: 1.8; }
+.experiences-guide .experience-link { margin-top: .42rem; text-decoration: underline; text-underline-offset: .4em; }
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  color: var(--wine);
+  font: 550 .625rem/1.4 var(--micro);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.experience-link:hover { color: var(--wine-dark); }
+.experience-link .icon { width: .875rem; height: .875rem; }
+.experiences-grid {
+  display: grid;
+  gap: 3rem 1.5rem;
+  margin-top: 3.5rem;
+}
+.experience-card { min-width: 0; }
+.experience-card-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: .5rem;
+  aspect-ratio: 3 / 4;
+  background: #f1e9d9;
+}
+.experience-card:is([data-experience="clases"], [data-experience="podcast"]) .experience-card-media { aspect-ratio: 4 / 5; }
+.experience-card[data-experience="academia"] .experience-card-media { aspect-ratio: 4 / 3; }
+.experience-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(.22, 1, .36, 1);
+}
+.experience-card:is(:hover, :focus-within) img { transform: scale(1.05); }
+.experience-card-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: .25rem .75rem;
+  border: 1px solid #fcf9f266;
+  border-radius: 100px;
+  background: #1c181665;
+  color: var(--cream);
+  font-size: .5625rem;
+  letter-spacing: .24em;
+  backdrop-filter: blur(4px);
+}
+.experience-card-copy { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #b88a3c59; }
+.experience-card-kicker {
+  color: #8f6826;
+  font-size: .5625rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+.experience-card h3 {
+  margin-top: .5rem;
+  font: 400 1.5625rem/1.25 var(--serif);
+}
+.experience-card-summary {
+  max-width: 42ch;
+  margin-top: .5rem;
+  color: var(--muted);
+  font-size: .8125rem;
+  line-height: 1.625;
+}
+.experience-card-action {
+  margin-top: .25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  letter-spacing: .24em;
+}
+.experience-card-action .icon { transition: transform .3s ease; }
+.experience-card-action:hover .icon { transform: translateX(4px); }
+.experiences-help {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #b88a3c4d;
+}
+.experiences-help p { max-width: 46ch; color: var(--muted); font-size: .8125rem; line-height: 1.625; }
+.experience-contact { padding: .75rem 1.5rem; border-color: #781d304d; border-radius: .375rem; font-size: .625rem; letter-spacing: .22em; }
+.experience-contact .icon { width: 1rem; height: 1rem; }
+.experience-contact:hover { background: var(--wine); color: var(--cream); }
+
+@media (min-width: 640px) {
+  .experiences-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .experiences-help { flex-direction: row; align-items: center; }
+}
+@media (min-width: 768px) {
+  .experiences-inner { padding: 7rem 2.5rem; }
+  .experiences-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); row-gap: 3.5rem; margin-top: 4rem; }
+  .experience-card:is([data-experience="clases"], [data-experience="podcast"]) { grid-column: span 5; }
+  .experience-card:is([data-experience="terapias"], [data-experience="academia"]) { grid-column: span 4; }
+  .experience-card:is([data-experience="eventos"], [data-experience="tienda"]) { grid-column: span 3; }
+  .experience-card[data-experience="terapias"] { margin-top: 2.5rem; }
+  .experience-card[data-experience="tienda"] { margin-top: 3rem; }
+  .experience-card h3 { font-size: 1.6875rem; }
+}
+@media (min-width: 1024px) {
+  .experiences-heading { grid-template-columns: 1fr auto; align-items: end; gap: 4rem; }
+}
